@@ -8,6 +8,14 @@ Bundler.require(*Rails.groups)
 
 module HTW
   class Application < Rails::Application
+
+    config.i18n.enforce_available_locales = false
+    config.i18n.available_locales = [:de, :en, :fr]
+
+    config.i18n.load_path += Dir[Rails.root.join('fr', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('de', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('en', 'locales', '*.{rb,yml}').to_s]
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -17,7 +25,11 @@ module HTW
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+
+    # config.i18n.default_locale = :fr
+
+    # I18n.config.available_locales = :fr
+    # I18n.config.available_locales = :de
+    # I18n.config.available_locales = :en
+    end
   end
-end

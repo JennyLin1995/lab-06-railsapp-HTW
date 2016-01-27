@@ -20,4 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  listing_customers:
+    title: "Listing customers"
+    new_customer: "New Customer"
+    table:
+      name: "Name"
+      discount: "Discount"
+
+    links:
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirm: "Are you sure?"
